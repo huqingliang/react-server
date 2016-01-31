@@ -15,14 +15,12 @@ node>=5.0.0
  * 1.3.1、安装依赖包：npm install
  * 1.3.2、运行 npm run build
 
-```
 
 * 1.4 最后打开页面：
 [http://localhost:3000/home](http://localhost:3000/home)
 
 ### 二、[NODE TEAM web基础框架介绍](http://gitlab.alibaba-inc.com/node/team/blob/master/web.md#%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6)
 
-```
 目录结构
 .griffin-start
 ├── app
@@ -46,5 +44,3 @@ node>=5.0.0
 ├── app.js
 ├── package.json
 └── README.md
-
-```
