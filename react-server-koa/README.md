@@ -1,35 +1,27 @@
-## 基于KOA、react一步步的实现一个类似griffin的web框架
+## 基于KOA、react一步步的实现react-server-render web框架
 
 ### 一、运行步骤
 
 - 1.1、环境准备：
 ```
-deer:2.2.0 node>=5.0.0
+node>=5.0.0
+babel6
+webpack
 ```
+* 1.2、 目录：react-server-koa-simple/
+ * 1.2.1、安装依赖包：npm install
+ * 1.2.2、运行 node app
 
-[deer使用文档](http://fe-wiki.alibaba.net/get-started/deer.html)
+* 1.3、目录：react-server-koa-simple/app/assets/
+ * 1.3.1、安装依赖包：npm install
+ * 1.3.2、运行 npm run build
 
-[node手册](http://data.api.alibaba.net/book/)
+* 1.4 最后打开页面：
+[http://localhost:3000/home?name=123](http://localhost:3000/home?name=123)
 
-* 1.2、 griffin-start/目录
- * 1.2.1、安装依赖包：tnpm install
- * 1.2.2、node app 或 node appSimple
-
-* 1.3、griffin-start/app/assets/目录
-
- * 1.3.1、运行
+### 二、目录结构
 ```
-deer watch
-```
-
- * 1.3.2 最后打开页面：
-[http://localhost:3000/home?name=haha](http://localhost:3000/home?name=haha)
-
-### 二、[NODE TEAM web基础框架介绍](http://gitlab.alibaba-inc.com/node/team/blob/master/web.md#%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6)
-
-```
-目录结构
-.griffin-start
+.react-server-koa
 ├── package.json
 ├── app.js (难度+1)
 ├── appSimple.js (简单)

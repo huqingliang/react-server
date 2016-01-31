@@ -1,4 +1,4 @@
-## 基于KOA、react一步步的实现一个类似griffin的web框架
+## 基于KOA、react一步步的实现react-server-render web框架
 
 ### 一、运行步骤
 
@@ -19,10 +19,9 @@ node>=5.0.0
 * 1.4 最后打开页面：
 [http://localhost:3000/home](http://localhost:3000/home)
 
-### 二、[NODE TEAM web基础框架介绍](http://gitlab.alibaba-inc.com/node/team/blob/master/web.md#%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6)
-
-目录结构
-.griffin-start
+### 二、目录结构
+```
+.react-server-koa-simple
 ├── app
 │   ├── assets (静态资源目录，可选)
 │   │   ├── src
@@ -44,3 +43,4 @@ node>=5.0.0
 ├── app.js
 ├── package.json
 └── README.md
+```
