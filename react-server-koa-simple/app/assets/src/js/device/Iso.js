@@ -50,7 +50,7 @@ class Iso extends Component {
         <Route path="/"
           component={this.wrapComponent(LayoutView)}>
           <IndexRoute component={this.wrapComponent(DeviceView)} />
-          <Route path="device/:deviceID" component={DeviceView} />
+          <Route path="/device/:deviceID" component={DeviceView} />
         </Route>
       </Router>
     );

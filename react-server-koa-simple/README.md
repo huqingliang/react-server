@@ -27,12 +27,13 @@ node>=5.0.0
 .react-server-koa-simple
 ├── app
 │   ├── assets (静态资源目录，可选)
+│   │   ├── build
 │   │   ├── src
 │   │   │    ├── img
 │   │   │    ├── js
 │   │   │    └── css
-│   │   ├── watch
-│   │   └── build
+│   │   ├── package.json（前端独有依赖）
+│   │   └── webpack.config.js（不解释）
 │   ├── middleware (你应用的中间件)
 │   │   └── static.js（前端静态资源托管中间件）
 │   ├── plugin (可选)
@@ -40,6 +41,7 @@ node>=5.0.0
 │   └── views (可选，由 view 插件规范)
 │       ├── layout
 │       │    └── Default.js
+│       ├── Device.js
 │       └── Home.js
 ├── .babelrc
 ├── .gitgnore

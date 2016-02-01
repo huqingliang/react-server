@@ -8,6 +8,7 @@
  *   谋士 <qingliang.hql@alibaba-inc.com>
  */
 'use strict';
+
 import React, { Component, PropTypes, cloneElement } from 'react';
 import { Link, IndexLink } from 'react-router';
 
