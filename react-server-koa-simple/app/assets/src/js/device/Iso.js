@@ -40,9 +40,10 @@ class Iso extends Component {
   render() {
     let { microdata, myData, isServer } = this.props;
     return (
-      <Router history={isServer ? createMemoryHistory('/abc') : browserHistory}>
+      <Router history={isServer ? createMemoryHistory(myData.path || '/') : browserHistory}>
         <Route path="/"
           component={this.wrapComponent(IndexView)}>
+          <IndexRoute component={AllView} />
           <Route path="all" component={AllView} />} />
           <Route path="pc" component={PcView} />
           <Route path="wireless" component={WirelessView} />

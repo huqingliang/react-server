@@ -13,11 +13,14 @@ node>=5.0.0
 
 * 1.3、目录：react-server-koa-simple/app/assets/
  * 1.3.1、安装依赖包：npm install
- * 1.3.2、运行 npm run build
+ * 1.3.2、运行 npm run build && npm run start
 
 
 * 1.4 最后打开页面：
+普通文本同构
 [http://localhost:3000/home](http://localhost:3000/home)
+路由同构
+[http://localhost:3000/pc?device=pc](http://localhost:3000/pc?device=pc)
 
 ### 二、目录结构
 ```

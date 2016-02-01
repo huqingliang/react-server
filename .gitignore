@@ -1,6 +1,8 @@
 react-server-koa/node_modules/
 react-server-koa/*.log
 react-server-koa/app/assets/node_modules/
+react-server-koa/app/assets/build/
 react-server-koa-simple/node_modules/
 react-server-koa-simple/app/assets/node_modules/
+react-server-koa-simple/app/assets/build/
 react-server-koa-simple/*.log

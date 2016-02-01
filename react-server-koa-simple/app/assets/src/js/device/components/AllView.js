@@ -21,7 +21,8 @@ class AllView extends Component {
 
   componentWillMount() {
     let { myData, location } = this.props;
-    if (myData.device === location.query.device) {
+    let lDevice = location.query.device;
+    if (lDevice === undefined || myData.device === location.query.device) {
       this.setState({
         text: myData.text
       });
