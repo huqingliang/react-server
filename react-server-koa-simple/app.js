@@ -19,57 +19,30 @@ const VERSION = require('./app/assets/package.json').version;
 const App = ()=> {
   let app = koa();
   let router = koaRouter();
-
+  let microdata = {
+    styleDomain: "//localhost:8080",
+    styleVersion: VERSION
+  };
   // 初始化/home路由dispatch的generator
   router.get('/home', function*() {
     // 执行view插件
     this.body = this.render('Home', {
-      microdata: {
-        domain: "//localhost:3000",
-        version: VERSION
-      },
-      myData: {
+      microdata: microdata,
+      mydata: {
         nick: 'server render body'
       }
     });
   });
-  let microdata = {
-    domain: "//localhost:8080",
-    version: VERSION
-  };
-  router.get(['/', '/all'], function*() {
+
+  router.get('/device/:deviceID', function*() {
     // 执行view插件
+    let deviceID = this.params.deviceID;
     this.body = this.render('Device', {
       isServer: true,
       microdata: microdata,
-      myData: {
-        device: 'all',
-        text: 'all module 111',
-        components: 'AllView'
-      }
-    });
-  });
-  router.get(['/pc'], function*() {
-    // 执行view插件
-    this.body = this.render('Device', {
-      isServer: true,
-      microdata: microdata,
-      myData: {
-        device: 'pc',
-        text: 'pc module 222',
-        components: 'PcView'
-      }
-    });
-  });
-  router.get(['/wireless'], function*() {
-    // 执行view插件
-    this.body = this.render('Device', {
-      isServer: true,
-      microdata: microdata,
-      myData: {
-        device: 'wireless',
-        text: 'wireless module 333',
-        components: 'WirelessView'
+      mydata: {
+        path: this.path,
+        deviceID: deviceID,
       }
     });
   });

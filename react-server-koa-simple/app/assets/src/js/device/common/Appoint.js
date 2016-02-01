@@ -15,6 +15,6 @@ const getServerData = (key)=> {
 };
 
 let microdata = getServerData('microdata');
-let myData = getServerData('myData');
+let mydata = getServerData('mydata');
 
-export { appEle, microdata, myData, getServerData };
+export { appEle, microdata, mydata, getServerData };

@@ -13,13 +13,13 @@ import React, { Component, PropTypes } from 'react';
 class Content extends Component {
   static propTypes = {
     microdata: PropTypes.object,
-    myData: PropTypes.object
+    mydata: PropTypes.object
   };
 
   render() {
-    let { microdata, myData } = this.props;
+    let { microdata, mydata } = this.props;
     return (
-      <div>hello：{myData.nick}</div>
+      <div>hello：{mydata.nick}</div>
     );
   }
 }

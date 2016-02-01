@@ -18,13 +18,13 @@ class Device extends Component {
 
   static propTypes = {
     microdata: PropTypes.object,
-    myData: PropTypes.object,
+    mydata: PropTypes.object,
     isServer: PropTypes.bool
   };
 
   render() {
-    let { microdata, myData, isServer } = this.props;
-    let deviceJs = `${microdata.domain}/build/${microdata.version}/js/device.js`;
+    let { microdata, mydata, isServer } = this.props;
+    let deviceJs = `${microdata.styleDomain}/build/${microdata.styleVersion}/js/device.js`;
     let scriptUrls = [deviceJs];
     return (
       <Default
@@ -33,10 +33,10 @@ class Device extends Component {
         title={"demo"}>
         <div id="demoApp"
           data-microdata={JSON.stringify(microdata)}
-          data-mydata={JSON.stringify(myData)}>
+          data-mydata={JSON.stringify(mydata)}>
           <Iso
             microdata={microdata}
-            myData={myData}
+            mydata={mydata}
             isServer={isServer} />
         </div>
       </Default>

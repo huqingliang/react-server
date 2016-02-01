@@ -13,20 +13,20 @@ import { Link, IndexLink } from 'react-router';
 
 
 const ACTIVE = { color: 'red'}
-class IndexView extends Component {
+class LayoutView extends Component {
   static propTypes = {
     microdata: PropTypes.object,
-    myData: PropTypes.object
+    mydata: PropTypes.object
   };
 
   renderChildren() {
-    let { microdata, myData, children } = this.props;
+    let { microdata, mydata, children } = this.props;
     let items = [];
     React.Children.map(children, function(child, i){
       items.push(cloneElement(child, {
         key: i,
         microdata: microdata,
-        myData: myData
+        mydata: mydata
       }));
     });
     return items;
@@ -35,11 +35,11 @@ class IndexView extends Component {
   render() {
     return (
       <div>
-        <h1>APP!</h1>
+        <h1>APP device!</h1>
         <ul>
-          <li><Link to={{pathname: '/all', query: {device: 'all'}}} activeStyle={ACTIVE}>/all</Link></li>
-          <li><Link to={{pathname: '/pc', query: {device: 'pc'}}} activeStyle={ACTIVE}>/pc</Link></li>
-          <li><Link to={{pathname: '/wireless', query: {device: 'wireless'}}} activeStyle={ACTIVE}>/wireless</Link></li>
+          <li><Link to="/device/all" activeStyle={ACTIVE}>/device/all</Link></li>
+          <li><Link to="/device/pc" activeStyle={ACTIVE}>/device/pc</Link></li>
+          <li><Link to="/device/wireless" activeStyle={ACTIVE}>/device/wireless</Link></li>
         </ul>
         <hr />
         {this.renderChildren()}
@@ -48,4 +48,4 @@ class IndexView extends Component {
   }
 }
 
-export default IndexView;
+export default LayoutView;

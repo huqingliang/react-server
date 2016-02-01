@@ -12,6 +12,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Iso from './Iso.js';
-import { appEle, microdata, myData } from './common/Appoint.js';
+import { appEle, microdata, mydata } from './common/Appoint.js';
 
-render(<Iso microdata={microdata} myData={myData} isServer={false} />, appEle);
+render(<Iso microdata={microdata} mydata={mydata} isServer={false} />, appEle);

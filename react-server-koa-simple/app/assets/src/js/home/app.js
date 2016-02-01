@@ -15,7 +15,7 @@ import Content from '../home/components/Content.js';
 
 const appEle = document.getElementById('demoApp');
 let microdata = JSON.parse(appEle.getAttribute('data-microdata'));
-let myData = JSON.parse(appEle.getAttribute('data-mydata'));
-myData.nick += ', then client reRender ';
+let mydata = JSON.parse(appEle.getAttribute('data-mydata'));
+mydata.nick += ', then client reRender ';
 
-render(<Content myData={myData} microdata={microdata} /> , appEle);
+render(<Content mydata={mydata} microdata={microdata} /> , appEle);

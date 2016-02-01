@@ -18,12 +18,12 @@ class Home extends Component {
 
   static propTypes = {
     microdata: PropTypes.object,
-    myData: PropTypes.object
+    mydata: PropTypes.object
   };
 
   render() {
-    let { microdata, myData } = this.props;
-    let homeJs = `${microdata.domain}/build/${microdata.version}/js/home.js`;
+    let { microdata, mydata } = this.props;
+    let homeJs = `${microdata.styleDomain}/build/${microdata.styleVersion}/js/home.js`;
     let scriptUrls = [homeJs];
     return (
       <Default
@@ -32,8 +32,8 @@ class Home extends Component {
         title={"demo"}>
         <div id="demoApp"
           data-microdata={JSON.stringify(microdata)}
-          data-mydata={JSON.stringify(myData)}>
-          <Content myData={myData} microdata={microdata} />
+          data-mydata={JSON.stringify(mydata)}>
+          <Content mydata={mydata} microdata={microdata} />
         </div>
       </Default>
     );
