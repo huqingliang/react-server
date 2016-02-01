@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app/assets/src/js/device/components/IndexView.js
+ * 路由布局
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *
@@ -8,7 +8,7 @@
  *   谋士 <qingliang.hql@alibaba-inc.com>
  */
 'use strict';
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, cloneElement } from 'react';
 import { Link, IndexLink } from 'react-router';
 
 
@@ -19,18 +19,30 @@ class IndexView extends Component {
     myData: PropTypes.object
   };
 
+  renderChildren() {
+    let { microdata, myData, children } = this.props;
+    let items = [];
+    React.Children.map(children, function(child, i){
+      items.push(cloneElement(child, {
+        key: i,
+        microdata: microdata,
+        myData: myData
+      }));
+    });
+    return items;
+  }
+
   render() {
-    let { microdata, myData } = this.props;
     return (
       <div>
         <h1>APP!</h1>
         <ul>
-          <li><Link to="/all" activeStyle={ACTIVE}>/all</Link></li>
-          <li><Link to="/pc" activeStyle={ACTIVE}>/pc</Link></li>
-          <li><Link to="/wireless" activeStyle={ACTIVE}>/wireless</Link></li>
+          <li><Link to={{pathname: '/all', query: {device: 'all'}}} activeStyle={ACTIVE}>/all</Link></li>
+          <li><Link to={{pathname: '/pc', query: {device: 'pc'}}} activeStyle={ACTIVE}>/pc</Link></li>
+          <li><Link to={{pathname: '/wireless', query: {device: 'wireless'}}} activeStyle={ACTIVE}>/wireless</Link></li>
         </ul>
         <hr />
-        {this.props.children}
+        {this.renderChildren()}
       </div>
     );
   }

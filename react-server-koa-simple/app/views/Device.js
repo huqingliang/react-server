@@ -11,18 +11,19 @@
 
 import path from 'path';
 import React, { Component, PropTypes } from 'react';
-import AllView from '../assets/src/js/device/components/AllView.js';
+import Iso from '../assets/src/js/device/Iso.js';
 import Default from './layout/Default';
 
 class Device extends Component {
 
   static propTypes = {
     microdata: PropTypes.object,
-    myData: PropTypes.object
+    myData: PropTypes.object,
+    isServer: PropTypes.bool
   };
 
   render() {
-    let { microdata, myData } = this.props;
+    let { microdata, myData, isServer } = this.props;
     let deviceJs = `${microdata.domain}/build/${microdata.version}/js/device.js`;
     let scriptUrls = [deviceJs];
     return (
@@ -33,7 +34,10 @@ class Device extends Component {
         <div id="demoApp"
           data-microdata={JSON.stringify(microdata)}
           data-mydata={JSON.stringify(myData)}>
-          <AllView microdata={microdata} myData={myData} />
+          <Iso
+            microdata={microdata}
+            myData={myData}
+            isServer={isServer} />
         </div>
       </Default>
     );

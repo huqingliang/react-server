@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app/assets/src/js/device/components/AllView.js
+ * components of all device
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *
@@ -13,14 +13,27 @@ import React, { Component, PropTypes } from 'react';
 class AllView extends Component {
   static propTypes = {
     microdata: PropTypes.object,
-    myData: PropTypes.object
   };
 
+  state = {
+    text: 'please fetch device of all device data from server!'
+  };
+
+  componentWillMount() {
+    let { myData, location } = this.props;
+    if (myData.device === location.query.device) {
+      this.setState({
+        text: myData.text
+      });
+    }
+  }
+
   render() {
-    let { microdata, myData } = this.props;
+    let { text } = this.state;
+
     return (
       <div>
-        <span>{myData.text}</span>
+        <span>{text}</span>
         <span> components</span>
         <span> rendered!</span>
       </div>

@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app/assets/src/js/device/components/WirelessView.js
+ * components of wireless
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *
@@ -10,17 +10,29 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 
-class IndexView extends Component {
+class WirelessView extends Component {
   static propTypes = {
-    microdata: PropTypes.object,
-    myData: PropTypes.object
+    microdata: PropTypes.object
   };
 
+  state = {
+    text: 'please fetch device of wireless data from server!'
+  };
+
+  componentWillMount() {
+    let { myData, location } = this.props;
+    if (myData.device === location.query.device) {
+      this.setState({
+        text: myData.text
+      });
+    }
+  }
+
   render() {
-    let { microdata, myData } = this.props;
+    let { text } = this.state;
     return (
       <div>
-        <span>{myData.text}</span>
+        <span>{text}</span>
         <span> components</span>
         <span> rendered!</span>
       </div>
@@ -28,4 +40,4 @@ class IndexView extends Component {
   }
 }
 
-export default IndexView;
+export default WirelessView;

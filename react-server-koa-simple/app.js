@@ -40,27 +40,36 @@ const App = ()=> {
   router.get(['/', '/all'], function*() {
     // 执行view插件
     this.body = this.render('Device', {
+      isServer: true,
       microdata: microdata,
       myData: {
-        text: 'all module'
+        device: 'all',
+        text: 'all module 111',
+        components: 'AllView'
       }
     });
   });
   router.get(['/pc'], function*() {
     // 执行view插件
     this.body = this.render('Device', {
+      isServer: true,
       microdata: microdata,
       myData: {
-        text: 'pc module'
+        device: 'pc',
+        text: 'pc module 222',
+        components: 'PcView'
       }
     });
   });
   router.get(['/wireless'], function*() {
     // 执行view插件
     this.body = this.render('Device', {
+      isServer: true,
       microdata: microdata,
       myData: {
-        text: 'wireless module'
+        device: 'wireless',
+        text: 'wireless module 333',
+        components: 'WirelessView'
       }
     });
   });

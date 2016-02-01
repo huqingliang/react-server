@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * app.js
+ * react-server-koa-simple /app/assets/src/js/home/app.js
+ * clientRender entry for home page
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *

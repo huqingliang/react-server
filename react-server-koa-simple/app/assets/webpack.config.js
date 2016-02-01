@@ -9,19 +9,12 @@ module.exports = [{
   entry: {
     'home': './src/js/home/app.js',
     'device': './src/js/device/app.js',
-    'vendors': ['react', 'react-dom', 'react-router'],
   },
   output: {
     path: path.join(__dirname, 'build', VERSION, 'js'),
     filename: "[name].js"
   },
   resolve: {
-    alias: {
-      'react': getModulePath('react'),
-      'react-dom': getModulePath('react-dom'),
-      'react-router': getModulePath('react-router'),
-      // 'components': path.join(__dirname, './js/components//'),
-    },
     extensions: ['', '.js', '.jsx', '.scss', '.css'],
   },
   devtool: 'source-map',
