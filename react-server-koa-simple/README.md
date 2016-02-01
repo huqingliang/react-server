@@ -1,4 +1,4 @@
-## 基于KOA、react一步步的实现react-server-render web框架
+## 基于KOA、react一步步的实现koa-react-server-render
 
 ### 一、运行步骤
 
@@ -17,10 +17,8 @@ node>=5.0.0
 
 
 * 1.4 最后打开页面：
-普通文本同构
-[http://localhost:3000/home](http://localhost:3000/home)
-路由同构
-[http://localhost:3000/pc?device=pc](http://localhost:3000/pc?device=pc)
+ - 普通文本同构：<http://localhost:3000/home>
+ - 路由同构：<http://localhost:3000/device/all>
 
 ### 二、目录结构
 ```
