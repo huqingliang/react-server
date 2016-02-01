@@ -14,6 +14,7 @@ const koaRouter = require('koa-router');
 const path = require('path');
 const reactview = require('./app/plugin/reactview/app.js');
 const Static = require('./app/middleware/static.js');
+const VERSION = require('./app/assets/package.json').version;
 
 const App = ()=> {
   let app = koa();
@@ -24,10 +25,42 @@ const App = ()=> {
     // 执行view插件
     this.body = this.render('Home', {
       microdata: {
-        domain: "//localhost:3000"
+        domain: "//localhost:3000",
+        version: VERSION
       },
       myData: {
         nick: 'server render body'
+      }
+    });
+  });
+  let microdata = {
+    domain: "//localhost:8080",
+    version: VERSION
+  };
+  router.get(['/', '/all'], function*() {
+    // 执行view插件
+    this.body = this.render('Device', {
+      microdata: microdata,
+      myData: {
+        text: 'all module'
+      }
+    });
+  });
+  router.get(['/pc'], function*() {
+    // 执行view插件
+    this.body = this.render('Device', {
+      microdata: microdata,
+      myData: {
+        text: 'pc module'
+      }
+    });
+  });
+  router.get(['/wireless'], function*() {
+    // 执行view插件
+    this.body = this.render('Device', {
+      microdata: microdata,
+      myData: {
+        text: 'wireless module'
       }
     });
   });

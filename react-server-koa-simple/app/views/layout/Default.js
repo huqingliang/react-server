@@ -30,7 +30,7 @@ class Default extends Component {
 
   render() {
     const { microdata, title, children } = this.props;
-
+    let vendorsJs = `${microdata.domain}/build/${microdata.version}/js/vendors.js`;
     return (
       <html>
         <head>
@@ -42,6 +42,7 @@ class Default extends Component {
           <meta name='description' content='demo' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <title>{title}</title>
+          <script src={vendorsJs} />
         </head>
         <body>
           {children}

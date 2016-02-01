@@ -11,10 +11,10 @@
 
 import path from 'path';
 import React, { Component, PropTypes } from 'react';
-import Content from '../assets/src/js/home/components/Content.js';
+import AllView from '../assets/src/js/device/AllView.js';
 import Default from './layout/Default';
 
-class Home extends Component {
+class Device extends Component {
 
   static propTypes = {
     microdata: PropTypes.object,
@@ -23,8 +23,8 @@ class Home extends Component {
 
   render() {
     let { microdata, myData } = this.props;
-    let homeJs = `${microdata.domain}/build/${microdata.version}/js/home.js`;
-    let scriptUrls = [homeJs];
+    let deviceJs = `${microdata.domain}/build/${microdata.version}/js/device.js`;
+    let scriptUrls = [deviceJs];
     return (
       <Default
         microdata={microdata}
@@ -33,11 +33,11 @@ class Home extends Component {
         <div id="demoApp"
           data-microdata={JSON.stringify(microdata)}
           data-mydata={JSON.stringify(myData)}>
-          <Content myData={myData} microdata={microdata} />
+          <AllView microdata={microdata} myData={myData} />
         </div>
       </Default>
     );
   }
 };
 
-module.exports = Home;
+module.exports = Device;

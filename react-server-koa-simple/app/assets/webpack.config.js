@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const VERSION = require('./package.json').version;
 
 const getModulePath = function(name) {
   return path.join(__dirname, 'node_modules', name);
@@ -7,16 +8,19 @@ const getModulePath = function(name) {
 module.exports = [{
   entry: {
     'home': './src/js/home/app.js',
-    // 'common': './src/js/common/app.js',
+    'device': './src/js/device/app.js',
+    'vendors': ['react', 'react-dom', 'react-router'],
   },
   output: {
-    path: path.join(__dirname, 'build/js/'),
+    path: path.join(__dirname, 'build', VERSION, 'js'),
     filename: "[name].js"
   },
   resolve: {
     alias: {
       'react': getModulePath('react'),
       'react-dom': getModulePath('react-dom'),
+      'react-router': getModulePath('react-router'),
+      // 'components': path.join(__dirname, './js/components//'),
     },
     extensions: ['', '.js', '.jsx', '.scss', '.css'],
   },
@@ -26,13 +30,11 @@ module.exports = [{
       test: /\.jsx?$/,
       include: [
         path.resolve(__dirname, 'src'),
-        // path.resolve(__dirname, './node_modules/@ali/oneui'),
       ],
       loaders: ['babel'],
     }, {
       test: /\.scss$/,
       loaders: ["style", "css?sourceMap", "sass?sourceMap"]
-      // loader: 'style-loader!css-loader!sass-loader'
     }]
   },
   plugins: [

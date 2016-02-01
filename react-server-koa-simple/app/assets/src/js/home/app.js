@@ -10,7 +10,8 @@
 'use strict';
 
 import { render } from 'react-dom';
-import Content from './components/Content.js';
+import React, { Component, PropTypes } from 'react';
+import Content from '../home/components/Content.js';
 
 const appEle = document.getElementById('demoApp');
 let microdata = JSON.parse(appEle.getAttribute('data-microdata'));
