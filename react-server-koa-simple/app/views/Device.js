@@ -11,7 +11,7 @@
 
 import path from 'path';
 import React, { Component, PropTypes } from 'react';
-import AllView from '../assets/src/js/device/AllView.js';
+import AllView from '../assets/src/js/device/components/AllView.js';
 import Default from './layout/Default';
 
 class Device extends Component {
