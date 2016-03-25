@@ -79,7 +79,7 @@ module.exports = function(app) {
       // subtly different than prod.
       markup = beautifyHTML(markup);
     }
-    console.log(markup);
+    debug(markup);
     if (options.writeResp) {
       this.type = 'html';
       this.body = markup;

@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app/views/Home.js
+ * page of home
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *

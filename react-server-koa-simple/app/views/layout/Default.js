@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app/views/layout/Default.js
+ * default layout
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *

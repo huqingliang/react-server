@@ -1,10 +1,9 @@
 {
-  "name": "@ali/griffin-start",
+  "name": "react-server-koa-simple",
   "description": "koa web framework & react server render",
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
-    "@ali/griffin-obp": "~1.0.1",
     "babel-core": "~6.4.5",
     "copy-to": "~2.0.1",
     "js-beautify": "~1.6.0",
@@ -22,7 +21,6 @@
     "inflection": "~1.8.0",
     "loading": "~1.10.0",
     "is": "~3.1.0",
-    "@ali/mm": "~3.6.2",
     "supertest": "~1.1.0",
     "should": "~8.2.0",
     "babel": "~6.3.26",

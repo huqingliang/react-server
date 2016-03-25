@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app/views/Device.js
+ * page of device
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *

@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa-simple - app.js
+ * application
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *
@@ -16,6 +16,13 @@ const reactview = require('./app/plugin/reactview/app.js');
 const Static = require('./app/middleware/static.js');
 const VERSION = require('./app/assets/package.json').version;
 
+const debug = require('debug');
+debug.enable('framework:*');
+debug.enable('myapp:*');
+debug.enable('koa-router');
+debug.enable('ready-callback');
+
+
 const App = ()=> {
   let app = koa();
   let router = koaRouter();
@@ -24,7 +31,7 @@ const App = ()=> {
     styleVersion: VERSION
   };
   // 初始化/home路由dispatch的generator
-  router.get('/home', function*() {
+  router.get(['/', '/home'], function*() {
     // 执行view插件
     this.body = this.render('Home', {
       microdata: microdata,
