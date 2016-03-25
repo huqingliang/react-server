@@ -16,13 +16,6 @@ const reactview = require('./app/plugin/reactview/app.js');
 const Static = require('./app/middleware/static.js');
 const VERSION = require('./app/assets/package.json').version;
 
-const debug = require('debug');
-debug.enable('framework:*');
-debug.enable('myapp:*');
-debug.enable('koa-router');
-debug.enable('ready-callback');
-
-
 const App = ()=> {
   let app = koa();
   let router = koaRouter();

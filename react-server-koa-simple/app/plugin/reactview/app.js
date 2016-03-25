@@ -27,7 +27,8 @@ const path = require('path');
 const beautifyHTML = require('js-beautify').html;
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
-const debug = require('debug')('myapp:reactview');
+require('debug').enable('reactview');
+const log = require('debug')('reactview');
 require('babel-register');
 
 const defaultOpts = {
@@ -79,7 +80,7 @@ module.exports = function(app) {
       // subtly different than prod.
       markup = beautifyHTML(markup);
     }
-    debug(markup);
+    log('[markup:]', markup);
     if (options.writeResp) {
       this.type = 'html';
       this.body = markup;
