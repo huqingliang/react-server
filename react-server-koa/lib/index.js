@@ -29,5 +29,6 @@ exports.createApp = function createApp(options) {
       console.log('3000 is listening!');
     });
   });
+  return app;
 };
 

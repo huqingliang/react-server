@@ -13,5 +13,10 @@ const debug = require('debug')('myapp:controller-home');
 
 module.exports = function*() {
   // 执行view插件
-  this.render('Home');
+  debug('aaaaaa........');
+  this.render('Home', {
+    myData: {
+      nick: 'aaa'
+    }
+  });
 };

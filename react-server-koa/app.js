@@ -1,6 +1,6 @@
 /**!
- * project - filepath
- * description
+ * react-server-koa - app.js
+ * application
  *
  * Copyright(c) Alibaba Group Holding Limited.
  *
@@ -21,7 +21,7 @@ const baseDir = __dirname;
 const viewpath = path.join(baseDir, 'app/views');
 const assetspath = path.join(baseDir, 'app/assets/src/js');
 
-require('./lib/index.js').createApp({
+exports.app = require('./lib/index.js').createApp({
   baseDir: baseDir,
   microdataOpts: {
     domain: "//localhost:3000"

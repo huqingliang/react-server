@@ -31,7 +31,7 @@ const App = ()=> {
       mydata: {
         nick: 'server render body'
       }
-    });
+    }, true);
   });
 
   router.get('/device/:deviceID', function*() {
@@ -44,7 +44,7 @@ const App = ()=> {
         path: this.path,
         deviceID: deviceID,
       }
-    });
+    }, false);
   });
   app.use(router.routes()).use(router.allowedMethods());
 

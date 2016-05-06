@@ -34,8 +34,14 @@ class Default extends Component {
     // <script src={vendorsJs} />
     return (
       <html>
+        <div>first layouts</div>
         <head>
+          <div>second  layouts</div>
           <meta charSet='utf-8' />
+          <div>
+            <span>second</span>
+            <p><span>gogogo444</span><span>555555555555</span></p>
+          </div>
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
           <meta httpEquiv='Cache-Control' content='no-siteapp' />
           <meta name='renderer' content='webkit' />

@@ -22,6 +22,10 @@ class Device extends Component {
     isServer: PropTypes.bool
   };
 
+  componentDidMount() {
+    console.log('hello componentDidMount!!!');
+  }
+
   render() {
     let { microdata, mydata, isServer } = this.props;
     let deviceJs = `${microdata.styleDomain}/build/${microdata.styleVersion}/js/device.js`;
@@ -34,6 +38,7 @@ class Device extends Component {
         <div id="demoApp"
           data-microdata={JSON.stringify(microdata)}
           data-mydata={JSON.stringify(mydata)}>
+          <script src='http://localhost:3000/assets/build/1.0.0-rc4/js/device.js'></script>
           <Iso
             microdata={microdata}
             mydata={mydata}

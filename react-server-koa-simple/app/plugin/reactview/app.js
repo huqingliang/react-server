@@ -70,6 +70,7 @@ module.exports = function(app) {
       let component = require(filepath);
       // Transpiled ES6 may export components as { default: Component }
       component = component.default || component;
+      console.log('component', component);
       markup += render(React.createElement(component, props, children));
     } catch (err) {
       err.code = 'REACT';
